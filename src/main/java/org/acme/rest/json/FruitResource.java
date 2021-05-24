@@ -21,6 +21,12 @@ public class FruitResource {
         fruits.add(new Fruit("Pineapple", "Tropical fruit"));
     }
 
+    @Path("/wellcome")
+    @GET
+    public String hello() {
+        return "Hello RESTEasy";
+    }
+
     @GET
     public Set<Fruit> list() {
         return fruits;
