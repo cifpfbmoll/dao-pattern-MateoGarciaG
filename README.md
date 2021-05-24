@@ -9,6 +9,8 @@ https://quarkus.io/guides/rest-json
 <br>
 And and OpenWebinas Course about Quarkus.
 
+### This project is done related to the Quarkus Guide content of REST-JSON, obviously there are more things to add. But the main goal is done.
+
 [![status application](https://img.shields.io/badge/status-stable-brightgreen)](URL_Proyecto)
 
 <!--Logos-->
