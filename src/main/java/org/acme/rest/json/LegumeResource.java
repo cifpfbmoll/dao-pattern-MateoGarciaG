@@ -1,15 +1,13 @@
 package org.acme.rest.json;
 
+import org.acme.rest.json.domain.Fruit;
 import org.acme.rest.json.domain.Legume;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -27,6 +25,18 @@ public class LegumeResource {
 
     @GET
     public Response list() {
+        return Response.ok(legumes).build();
+    }
+
+    @POST
+    public Response add(Legume legume) {
+        legumes.add(legume);
+        return Response.ok(legumes).build();
+    }
+
+    @DELETE
+    public Response delete(Fruit fruit) {
+        legumes.removeIf(existingLegume -> existingLegume.name.contentEquals(fruit.name));
         return Response.ok(legumes).build();
     }
 }
