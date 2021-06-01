@@ -1,7 +1,7 @@
-package org.acme.rest.json;
+package org.acme.rest.json.resources;
 
-import org.acme.rest.json.domain.Fruit;
-import org.acme.rest.json.domain.Legume;
+import org.acme.rest.json.entities.Fruit;
+import org.acme.rest.json.entities.Legume;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;

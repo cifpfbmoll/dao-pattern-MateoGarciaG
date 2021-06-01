@@ -1,4 +1,4 @@
-package org.acme.rest.json.domain;
+package org.acme.rest.json.entities;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 /* @RegisterForReflection, permite que Legume 

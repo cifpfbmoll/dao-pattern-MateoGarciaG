@@ -1,4 +1,4 @@
-package org.acme.rest.json.domain;
+package org.acme.rest.json.entities;
 
 public class Fruit {
 
