@@ -1,6 +1,6 @@
 package org.acme.rest.json.entities;
 
-public class Fruit {
+public class Fruit extends{
 
     public String name;
     public String description;
