@@ -3,21 +3,29 @@ package org.acme.rest.json.entities;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+
+/**
+ * Es mejor usar PanacheEntityBase si queremos personalizar el ID a nuestro gusto con Hibernate por ejemplo
+ * */
+
 
 @Entity
 @Table(name="Fruit")
 @JsonPropertyOrder({"name", "description"})
-public class Fruit extends PanacheEntity{
+public class Fruit extends PanacheEntityBase {
 
     /*
     * Las propiedades/atributos deben ser public para que Jackson pueda acceder a ellas mediante Reflection y podeer realizar la serialización o deserialización donde Quarkus los hace PUBLIC
     * */
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long id;
 
     @NotEmpty
     @NotBlank
