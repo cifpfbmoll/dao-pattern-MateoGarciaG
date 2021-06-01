@@ -14,11 +14,11 @@ import javax.ws.rs.core.Response;
 @Path("/legumes")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class LegumeResource {
+public class ResourceLegume {
 
     private Set<Legume> legumes = Collections.synchronizedSet(new LinkedHashSet<>());
 
-    public LegumeResource() {
+    public ResourceLegume() {
         legumes.add(new Legume("Carrot", "Root vegetable, usually orange"));
         legumes.add(new Legume("Zucchini", "Summer squash"));
     }
