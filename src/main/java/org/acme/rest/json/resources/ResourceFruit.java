@@ -12,6 +12,7 @@ import javax.ws.rs.core.Response;
 import java.util.Optional;
 import java.util.Set;
 
+@Path("/fruits")
 public class ResourceFruit {
 
     @Inject
@@ -37,7 +38,7 @@ public class ResourceFruit {
     // -H "Content-Type: application/x-www-form-urlencoded"
     // El "Content-Type: application/x-www-form-urlencoded" indica que es TEXT_PLAIN
     public String hello() {
-        return "Hello World";
+        return "Hello World Fruits";
 
 
     }
@@ -50,7 +51,7 @@ public class ResourceFruit {
     // resteasy jackson desactiva la negociación
     // y sirve MediaType.APPLICATION_JSON
     // curl -w "\n" http://localhost:8080/fruits/ -H "Content-Type: application/json"
-    public Set<Fruit> list() {
+    public Set<Fruit> listFruits() {
         return service.list();
     }
 
@@ -60,9 +61,9 @@ public class ResourceFruit {
     @Transactional
     // curl -d '{"name":"Banana", "description":"Brings a Gorilla too"}'
     // -H "Content-Type: application/json" -X POST http://localhost:8080/fruits
-    public Set<Fruit> add(@Valid Fruit fruit) {
+    public Response add(@Valid Fruit fruit) {
         service.add(fruit);
-        return this.list();
+        return Response.accepted(fruit).header("message", "The Fruit was add succesfully!!!").build();
     }
 
     @DELETE
@@ -71,9 +72,10 @@ public class ResourceFruit {
     @Transactional
     // curl -d '{"name":"Banana", "description":"Brings a Gorilla too"}'
     // -H "Content-Type: application/json" -X DELETE http://localhost:8080/fruits
-    public Set<Fruit> delete(@Valid Fruit fruit) {
+    public Response delete(@Valid Fruit fruit) {
         service.remove(fruit.getName());
-        return list();
+        // ReUse list() method of ResourceFruit
+        return Response.ok(this.listFruits(), MediaType.APPLICATION_JSON).build();
     }
 
     @GET

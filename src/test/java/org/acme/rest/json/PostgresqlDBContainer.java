@@ -26,7 +26,7 @@ public class PostgresqlDBContainer {
         }
 
         private Map<String, String> getConfigurationParameters() {
-            // Overrides Quarkus’s configuration to point database connection
+            // Overrides Global Quarkus’s configuration Properties of connection to a Database to point and set database connection variables to connect the app with the container test.
             // to the container one
 
             final Map<String, String> conf = new HashMap<>();

@@ -8,6 +8,6 @@ CREATE TABLE Fruit
     PRIMARY KEY (id)
 );
 INSERT INTO Fruit (id, name, description)
-VALUES (DEFAULT, 'Apple', 'Winter fruit');
+VALUES (1050, 'Apple', 'Winter fruit');
 INSERT INTO Fruit (id, name, description)
-VALUES (DEFAULT, 'Pineapple', 'Tropical fruit');
+VALUES (2050, 'Pineapple', 'Tropical fruit');
