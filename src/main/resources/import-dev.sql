@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS Fruit;
 
 CREATE TABLE Fruit
 (
-    id SERIAL NOT NULL UNIQUE,
+    id SERIAL NOT NULL,
     name VARCHAR (255) NOT NULL,
     description VARCHAR(255),
     PRIMARY KEY (id)

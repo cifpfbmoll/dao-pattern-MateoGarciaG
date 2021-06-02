@@ -75,7 +75,7 @@ public class ResourceFruit {
     public Response delete(@Valid Fruit fruit) {
         service.remove(fruit.getName());
         // ReUse list() method of ResourceFruit
-        return Response.ok(this.listFruits(), MediaType.APPLICATION_JSON).build();
+        return Response.ok(this.listFruits(), MediaType.APPLICATION_JSON).header("message", "The Fruit was deleted succesfully!!!").build();
     }
 
     @GET

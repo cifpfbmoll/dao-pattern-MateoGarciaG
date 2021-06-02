@@ -25,7 +25,8 @@ public class Fruit extends PanacheEntity {
 
     @NotEmpty
     @NotBlank
-    @Column(unique = true, name="name")
+    // @Column(unique = true, name="name", nullable = false)
+    @Column(name="name", nullable = false)
     public String name;
 
     @NotEmpty
