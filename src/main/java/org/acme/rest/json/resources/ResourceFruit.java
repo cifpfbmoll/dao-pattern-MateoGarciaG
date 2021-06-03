@@ -34,6 +34,7 @@ public class ResourceFruit {
     @GET
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
+    @Transactional
     // curl -w "\n" http://localhost:8080/fruits/helloworld
     // -H "Content-Type: application/x-www-form-urlencoded"
     // El "Content-Type: application/x-www-form-urlencoded" indica que es TEXT_PLAIN
@@ -47,6 +48,7 @@ public class ResourceFruit {
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    @Transactional
     // no es necesario Produces ya que por defecto
     // resteasy jackson desactiva la negociación
     // y sirve MediaType.APPLICATION_JSON
@@ -55,7 +57,9 @@ public class ResourceFruit {
         return service.list();
     }
 
+    
     @POST
+    @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
@@ -63,7 +67,8 @@ public class ResourceFruit {
     // -H "Content-Type: application/json" -X POST http://localhost:8080/fruits
     public Response add(@Valid Fruit fruit) {
         service.add(fruit);
-        return Response.accepted(fruit).header("message", "The Fruit was add succesfully!!!").build();
+        // return Response.accepted(fruit).header("message", "The Fruit was add succesfully!!!").build();
+        return Response.ok(this.listFruits(), MediaType.APPLICATION_JSON_TYPE).header("message", "The Fruit was add succesfully!!!").build();
     }
 
     @DELETE
@@ -81,6 +86,7 @@ public class ResourceFruit {
     @GET
     @Path("/{name}")
     @Produces(MediaType.APPLICATION_JSON)
+    @Transactional
     // curl -w "\n" http://localhost:8080/fruits/Apple -v
     // curl -w "\n" http://localhost:8080/fruits/jkl -v
     public Response get(@PathParam("name") String name) {
