@@ -1,4 +1,4 @@
-package org.acme.rest.json;
+package org.acme.rest.json.resources;
 
 import io.quarkus.test.TestTransaction;
 import io.quarkus.test.junit.QuarkusTest;

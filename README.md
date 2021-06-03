@@ -1,15 +1,16 @@
-# Rest-Json-Quickstart Project
+# Rest-Json-Active-Record Project
 
 ## Getting Started
-Wellcome to my Project with Rest-Json API with the Quarkus FrameWork related to Java. This project is a "Rest-Json-Quickstart Project" 
-where I put the things that I've been learning about the tutorials of Quarkus related to creation of a API in Quarkus
+Wellcome to my Project with Rest-Json API with Active Record Pattern with the Quarkus FrameWork related to Java. This project is 
+where I put the things that I've been learning about the tutorials of Quarkus related to creation of a API in Quarkus using Active Record Pattern
 
 ## Guides that I Followed:
-https://quarkus.io/guides/rest-json
+https://quarkus.io/guides/hibernate-orm-panache
 <br>
 And and OpenWebinas Course about Quarkus.
+<br>
+https://github.com/dfleta/quarkus-active-record-pattern by @dfleta GitHub user
 
-#### This project is done related to the Quarkus Guide Tutorial content of REST-JSON, obviously there are more things to add. But the main goal is done.
 
 [![status application](https://img.shields.io/badge/status-stable-brightgreen)](URL_Proyecto)
 
@@ -60,7 +61,7 @@ And and OpenWebinas Course about Quarkus.
 
 ## Reflexiones
 ### Que has mejorado con este proyecto?
-This Project has let me to learn how to a simple but with the main concepts of a API REST are applied in a Quarkus Project and how Quarkus have great advantages of Reflection and the use of Jackson or JSON-B to serialization. And how this it's apply with the test cases.
+This Project has let me to learn how to 
 
 **[⬆ back to top](#tabla-de-contenidos)**
 
