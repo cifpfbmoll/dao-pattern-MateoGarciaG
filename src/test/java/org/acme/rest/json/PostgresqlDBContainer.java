@@ -18,8 +18,10 @@ public class PostgresqlDBContainer {
 
         @Override
         public Map<String, String> start() {
-            // Instantiate MariaDB container with required Docker image
-            this.postgresDBContainer= new PostgreSQLContainer<>("postgres:latest");
+            // Instantiate PostGrSQLDB container with required Docker image
+            this.postgresDBContainer= new PostgreSQLContainer<>("postgres:latest").withDatabaseName("develop")
+            .withUsername("develop")
+            .withPassword("develop");
             // Starts the container and waits until the container is accepting connections
             this.postgresDBContainer.start();
             return getConfigurationParameters();
@@ -30,9 +32,10 @@ public class PostgresqlDBContainer {
             // to the container one
 
             final Map<String, String> conf = new HashMap<>();
-            conf.put("quarkus.datasource.jdbc.url", this.postgresDBContainer.getJdbcUrl());
-            conf.put("quarkus.datasource.username", this.postgresDBContainer.getUsername());
-            conf.put("quarkus.datasource.password", this.postgresDBContainer.getPassword());
+            conf.put("%test.quarkus.datasource.jdbc.url", this.postgresDBContainer.getJdbcUrl());
+            // conf.put("%test.quarkus.datasource.username", this.postgresDBContainer.getUsername());
+            // conf.put("%test.quarkus.datasource.password", this.postgresDBContainer.getPassword());
+            
             // conf.put("quarkus.datasource.driver", this.mariaDBContainer.getDriverClassName());
             return conf;
         }

@@ -67,16 +67,18 @@ public class ResourceFruitTest {
 
     @Test
     public void testAddDelete() {
+
+        // statusCode POST is 202, because in the creation of response i used the accepted() method which have 202 STATUS CODE
         given()
             .body("{\"name\": \"Banana\", \"description\": \"Brings a Gorilla too\"}")
             .header("Content-Type", MediaType.APPLICATION_JSON)
         .when()
             .post("/fruits")
         .then()
-            .statusCode(200)
+            .statusCode(202)
             .body("$.size()", is(3),
-                "name", containsInAnyOrder("Banana", "Apple", "Pineapple"),
-                "description", containsInAnyOrder("Brings a Gorilla too", "Winter fruit", "Tropical fruit"));
+                "name", containsInAnyOrder("Apple", "Pineapple","Banana"),
+                "description", containsInAnyOrder("Winter fruit", "Tropical fruit", "Brings a Gorilla too"));
         
         given()
             .body("{\"name\": \"Banana\", \"description\": \"Brings a Gorilla too\"}")
