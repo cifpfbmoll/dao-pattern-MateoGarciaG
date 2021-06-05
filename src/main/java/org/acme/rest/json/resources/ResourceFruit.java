@@ -63,8 +63,7 @@ public class ResourceFruit {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
-    // curl -d '{"name":"Banana", "description":"Brings a Gorilla too"}'
-    // -H "Content-Type: application/json" -X POST http://localhost:8080/fruits
+    // curl -d '{"name":"Banana", "description":"Brings a Gorilla too"}' -H "Content-Type: application/json" -X POST http://localhost:8080/fruits/add
     public Response add(@Valid Fruit fruit) {
         service.add(fruit);
         // return Response.accepted(fruit).header("message", "The Fruit was add succesfully!!!").build();
