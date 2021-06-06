@@ -17,7 +17,7 @@ public class ServiceStudent {
     
     public ServiceStudent() {}
 
-    public Set<Student> listStudents() {
+    public Set<Student> setStudents() {
 
         Stream<Student> studentStream = Student.streamAll();
 
