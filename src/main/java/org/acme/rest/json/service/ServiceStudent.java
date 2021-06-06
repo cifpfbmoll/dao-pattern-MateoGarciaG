@@ -26,9 +26,7 @@ public class ServiceStudent {
 
     public Set<Student> setStudents() {
 
-        Stream<Student> studentStream = repo.streamAll();
-
-        return studentStream.collect(Collectors.toSet());
+        return repo.allStudents();
     }
 
     public List<Student> studentsOrderByName() {
