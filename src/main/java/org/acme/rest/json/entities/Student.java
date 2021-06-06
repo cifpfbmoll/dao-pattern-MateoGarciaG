@@ -1,5 +1,6 @@
 package org.acme.rest.json.entities;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -34,7 +35,7 @@ public class Student extends PanacheEntity{
     @NotBlank
     @Column(name="date_birth", nullable = false)
     @Temporal(TemporalType.DATE)
-    public Date dateBirth;
+    public LocalDate dateBirth;
 
     @NotEmpty
     @NotBlank
@@ -44,7 +45,7 @@ public class Student extends PanacheEntity{
     public Student() {}
 
 
-    public Student(String name, String surname, Date dateBirth, String phone) {
+    public Student(String name, String surname, LocalDate dateBirth, String phone) {
         this.name = name;
         this.surname = surname;
         this.dateBirth = dateBirth;
@@ -68,11 +69,11 @@ public class Student extends PanacheEntity{
         this.surname = surname;
     }
 
-    public Date getDateBirth() {
+    public LocalDate getDateBirth() {
         return this.dateBirth;
     }
 
-    public void setDateBirth(Date dateBirth) {
+    public void setDateBirth(LocalDate dateBirth) {
         this.dateBirth = dateBirth;
     }
 
