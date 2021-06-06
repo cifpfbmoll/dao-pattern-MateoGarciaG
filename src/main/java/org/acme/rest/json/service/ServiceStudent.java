@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 import javax.enterprise.context.ApplicationScoped;
 
-import org.acme.rest.json.entities.Fruit;
+
 import org.acme.rest.json.entities.Student;
 
 
