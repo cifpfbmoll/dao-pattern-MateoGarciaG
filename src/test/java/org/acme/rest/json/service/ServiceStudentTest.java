@@ -40,7 +40,13 @@ public class ServiceStudentTest {
             System.out.println(service.setStudents());
     
             Assertions.assertThat(service.setStudents()).hasSize(3);
+
             Assertions.assertThat(service.setStudents().stream().anyMatch(f -> f.getName().equalsIgnoreCase("Pedro"))).isTrue();
+
+            Assertions.assertThat(service.setStudents().stream().anyMatch(f -> f.getSurname().equalsIgnoreCase("Gimenez"))).isTrue();
+
+            Assertions.assertThat(service.setStudents().stream().anyMatch(f -> f.getDateBirth().equals(LocalDate.parse("1990-12-17")))).isTrue();
+            Assertions.assertThat(service.setStudents().stream().anyMatch(f -> f.getPhone().equalsIgnoreCase("+34 687687878"))).isTrue();
     
             // handmade rollback debido antipatron ActiveRecord
             Student fruit = Student.find("name", "Pedro").firstResult();

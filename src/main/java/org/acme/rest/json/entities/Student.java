@@ -18,7 +18,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
 @Table(name="Student")
-@JsonPropertyOrder({"name", "surname", "date_birth", "phone"})
+@JsonPropertyOrder({"name", "surname", "dateBirth", "phone"})
 public class Student extends PanacheEntity{
 
     @NotEmpty
@@ -34,7 +34,8 @@ public class Student extends PanacheEntity{
 
     // @Temporal(TemporalType.DATE) Es para java.Util.Date
 
-    @JsonFormat(pattern="yyyy-MM-dd")
+    
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     @Column(name="date_birth", nullable = false, columnDefinition = "DATE")
     public LocalDate dateBirth;
 

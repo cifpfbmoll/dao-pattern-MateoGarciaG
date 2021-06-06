@@ -77,7 +77,7 @@ public class ResourceStudent {
     // @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
-    public Response updateStudent(@PathParam("name") String name) {
+    public Response getByName(@PathParam("name") String name) {
         Optional<Student> student = service.getStudentByName(name);
 
         return student.isPresent() ? Response.status(Response.Status.OK).entity(student.get()).build() : Response.status(Response.Status.NOT_FOUND).build();
