@@ -92,6 +92,16 @@ I did this because I want to create new Entities apart from the origin code prov
 
 My new API is about Students and Universities.
 
+I also created 2 branches focused on to use MariaDB and MySQL to test how works and how my code is separated from the type of database. And It worked!!. All databases: PostGreSQL, MariaDB and MySQL works with the API without change my code and test cases, only change the drivers and application.properties URL JDBC obviously.
+
+MariaDB:
+
+https://github.com/cifpfbmoll/active-record-patter-MateoGarciaG/tree/feature/mariaDB
+
+MySQL:
+
+https://github.com/cifpfbmoll/active-record-patter-MateoGarciaG/tree/feature/mySQL
+
 
 **[⬆ back to top](#tabla-de-contenidos)**
 
