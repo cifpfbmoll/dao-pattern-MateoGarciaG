@@ -2,7 +2,8 @@
 
 ## Getting Started
 Wellcome to my Project with Rest-Json API with Active Record Pattern with the Quarkus FrameWork related to Java. This project is 
-where I put the things that I've been learning about the tutorials of Quarkus related to creation of a API in Quarkus using Active Record Pattern
+where I put the things that I've been learning about the tutorials of Quarkus related to creation of a API in Quarkus using Active Record Pattern.
+This API is about students data.
 
 ## Guides that I Followed:
 https://quarkus.io/guides/hibernate-orm-panache
@@ -11,7 +12,7 @@ And and OpenWebinas Course about Quarkus.
 <br>
 https://github.com/dfleta/quarkus-active-record-pattern by @dfleta GitHub user
 
-### Important: If you want more details about why there are a lot of branches and my process you can go to Reflection's section
+### Important: If you want more details about why there are a lot of branches and my process you can go to Reflections's section
 
 <br>
 
