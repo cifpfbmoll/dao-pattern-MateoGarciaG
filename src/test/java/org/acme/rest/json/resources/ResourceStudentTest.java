@@ -147,6 +147,20 @@ public class ResourceStudentTest {
             "dateBirth", equalTo("2000-10-17"),
             "phone", equalTo("+34 688888888"));
 
+    
+
+    // ROLLBACK to put the original Student
+    given().body("{\"name\": \"Mateo\", \"surname\": \"Alvarez\", \"dateBirth\": \"2005-06-05\", \"phone\": \"+34 666666666\"}")
+        .header("Content-Type", MediaType.APPLICATION_JSON)
+        .when()
+            .put("/students/put")
+        .then()
+            .contentType(ContentType.JSON)
+            .body("name", equalTo("Mateo"),
+            "surname", equalTo("Alvarez"),
+            "dateBirth", equalTo("2005-06-05"),
+            "phone", equalTo("+34 666666666"));
+
     }
 
 }
