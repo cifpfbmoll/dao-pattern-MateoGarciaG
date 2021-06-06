@@ -13,6 +13,7 @@ https://github.com/dfleta/quarkus-active-record-pattern by @dfleta GitHub user
 
 ### Important: If you want more details about why there are a lot of branches and my process you can go to Reflection's section
 
+<br>
 
 [![status application](https://img.shields.io/badge/status-stable-brightgreen)](URL_Proyecto)
 
