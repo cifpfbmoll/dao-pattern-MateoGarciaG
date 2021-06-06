@@ -7,7 +7,6 @@ import io.restassured.common.mapper.TypeRef;
 import io.restassured.http.ContentType;
 import net.bytebuddy.asm.Advice.Local;
 
-import org.acme.rest.json.PostgresqlDBContainer;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -25,7 +24,6 @@ import javax.transaction.Transactional;
 import javax.ws.rs.core.MediaType;
 
 // @QuarkusTestResource para indicarle que use el TestContainers, pero al parecer Testcontainer ya lo aplica por defecto sin necesidad de llamarlo explicitamente
-// @QuarkusTestResource(PostgresqlDBContainer.Initializer.class)
 @Transactional
 @QuarkusTest
 public class ResourceStudentTest {
