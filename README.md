@@ -1,8 +1,8 @@
-# Rest-Json-Active-Record Project
+# Rest-Json-DAO-Pattern Project
 
 ## Getting Started
-Wellcome to my Project with Rest-Json API with Active Record Pattern with the Quarkus FrameWork related to Java. This project is 
-where I put the things that I've been learning about the tutorials of Quarkus related to creation of a API in Quarkus using Active Record Pattern.
+Wellcome to my Project with Rest-Json API with DAO Pattern with the Quarkus FrameWork related to Java. This project is 
+where I put the things that I've been learning about the tutorials of Quarkus related to creation of a API in Quarkus using DAO Pattern.
 This API is about students data.
 
 ## Guides that I Followed:
@@ -10,7 +10,8 @@ https://quarkus.io/guides/hibernate-orm-panache
 <br>
 And and OpenWebinas Course about Quarkus.
 <br>
-https://github.com/dfleta/quarkus-active-record-pattern by @dfleta GitHub user
+https://github.com/dfleta/quarkus-DAO-pattern 
+by @dfleta GitHub user
 
 ### Important: If you want more details about why there are a lot of branches and my process you can go to Reflections's section
 
@@ -80,27 +81,29 @@ $ docker run -ti --rm -e POSTGRES_PASSWORD=develop -e  POSTGRES_USER=develop -e 
 
 ## Reflexiones
 ### Que has mejorado con este proyecto?
-This Project has let me to learn how to create a simple API REST using Active Record Pattern, first of all I use the mayority of code from repository:
+This Project has let me to learn how to create a simple API REST using DAO Pattern, first of all I use code from repository in the Branch: feature/daoFruits:
 
-https://github.com/dfleta/quarkus-active-record-pattern
+https://github.com/dfleta/quarkus-DAO-pattern
 
-Provided by @dfleta user which I used to learn and understand the concepts fo the pattern and how the test works. After I put this code in a specific Branch called: feature/activeRecordFruits, you can see it here:
+Provided by @dfleta user which I used to learn and understand the concepts of the pattern and how the test works. After I put this code in a specific Branch called: feature/daoFruits, you can see it here:
 
-https://github.com/cifpfbmoll/active-record-patter-MateoGarciaG/tree/feature/activeRecordFruits
 
-I did this because I want to create new Entities apart from the origin code provided by @dfleta to practice by my own with my test cases and the Service and Controller methods to learn the process from beginning until the end of how to create and API with active record pattern and the test cases.
 
-My new API is about Students and Universities.
+I did this because I want to create new Entities apart from the origin code provided by @dfleta to practice by my own with my test cases and the Service and Controller methods to learn the process from beginning until the end of how to create and API with DAO pattern and the test cases.
+
+My new API is about Students and Universities too like a Active Pattern Project that I did.
 
 I also created 2 branches focused on to use MariaDB and MySQL to test how works and how my code is separated from the type of database. And It worked!!. All databases: PostGreSQL, MariaDB and MySQL works with the API without change my code and test cases, only change the drivers and application.properties URL JDBC obviously.
 
 MariaDB:
 
-https://github.com/cifpfbmoll/active-record-patter-MateoGarciaG/tree/feature/mariaDB
+
 
 MySQL:
 
-https://github.com/cifpfbmoll/active-record-patter-MateoGarciaG/tree/feature/mySQL
+
+
+I prefer this pattern because let me to separate more the Layers in the API and because The Entity doesn't have to managed by itself like in the Active Pattern where through PanacheEntity, the Entity use the methods like a EntityManager. So this pattern let me to separate the EntityManager from the Entity itself with a new layer called: RESPOSITORY
 
 
 **[⬆ back to top](#tabla-de-contenidos)**

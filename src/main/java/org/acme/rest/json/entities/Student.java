@@ -5,6 +5,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -19,7 +22,12 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Entity
 @Table(name="Student")
 @JsonPropertyOrder({"name", "surname", "dateBirth", "phone"})
-public class Student extends PanacheEntity{
+public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+    public Long id;
 
     @NotEmpty
     @NotBlank
