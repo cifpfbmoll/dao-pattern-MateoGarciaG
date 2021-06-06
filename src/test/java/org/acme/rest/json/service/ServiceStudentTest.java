@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.transaction.Transactional;
 
 import org.acme.rest.json.entities.Student;
+import org.acme.rest.json.repositories.RepositoryStudent;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -20,6 +21,10 @@ public class ServiceStudentTest {
 
         @Inject
         ServiceStudent service;
+
+        // I have to Inject RepositoryStudent only because @Transactional doesn't work to do the ROLLBACKS en each test, so I use this repo object to do the manual ROLLBACKS, but this bean mustn't be here.
+        @Inject
+        RepositoryStudent repo;
     
         // @Test de jupiter, no el de junit
         @Test
@@ -49,9 +54,9 @@ public class ServiceStudentTest {
             Assertions.assertThat(service.setStudents().stream().anyMatch(f -> f.getPhone().equalsIgnoreCase("+34 687687878"))).isTrue();
     
             // handmade rollback debido antipatron ActiveRecord
-            Student fruit = Student.find("name", "Pedro").firstResult();
-            fruit.delete();
-            Assertions.assertThat(Student.count()).isEqualTo(2);
+            Student student = repo.find("name", "Pedro").firstResult();
+            repo.delete(student);
+            Assertions.assertThat(repo.count()).isEqualTo(2);
         }
         @Test
         public void removeTest(){
@@ -60,8 +65,8 @@ public class ServiceStudentTest {
             Assertions.assertThat(service.setStudents().stream().anyMatch(f -> f.getName().equalsIgnoreCase("Will"))).isFalse();
     
             // handmade rollback debido al antipatron ActiveRecord 
-            Student.persist(new Student("Will", "Smith", LocalDate.of(1999, Month.JUNE, 17), "+34 677878997"));
-            Assertions.assertThat(Student.count()).isEqualTo(2);
+            repo.persist(new Student("Will", "Smith", LocalDate.of(1999, Month.JUNE, 17), "+34 677878997"));
+            Assertions.assertThat(repo.count()).isEqualTo(2);
         }
     
         @Test
@@ -80,7 +85,7 @@ public class ServiceStudentTest {
             service.updateStudent(new Student("Will", "James", LocalDate.of(1987, Month.SEPTEMBER, 06), "+34 687685598"));
 
             // Check if the total of student is still 2
-            Assertions.assertThat(Student.count()).isEqualTo(2);
+            Assertions.assertThat(repo.count()).isEqualTo(2);
 
             // Check if the student was updated
             Assertions.assertThat(service.getStudentByName("Will")).get().hasFieldOrPropertyWithValue("name", "Will").hasFieldOrPropertyWithValue("dateBirth", LocalDate.parse("1987-09-06")).hasFieldOrPropertyWithValue("phone", "+34 687685598");
