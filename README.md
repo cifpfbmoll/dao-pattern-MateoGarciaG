@@ -11,6 +11,8 @@ And and OpenWebinas Course about Quarkus.
 <br>
 https://github.com/dfleta/quarkus-active-record-pattern by @dfleta GitHub user
 
+### Important: If you want more details about why there are a lot of branches and my process you can go to Reflection's section
+
 
 [![status application](https://img.shields.io/badge/status-stable-brightgreen)](URL_Proyecto)
 
@@ -78,7 +80,16 @@ $ docker run -ti --rm -e POSTGRES_PASSWORD=develop -e  POSTGRES_USER=develop -e 
 ### Que has mejorado con este proyecto?
 This Project has let me to learn how to create a simple API REST using Active Record Pattern, first of all I use the mayority of code from repository:
 
-Provided by @dfleta user which I used to learn and understand the concepts fo the pattern and how the test works. After I add new Entity with its test cases and the Service and Controller methods to learn the process from beginning until the end of how to create and API with active record pattern and the test cases
+https://github.com/dfleta/quarkus-active-record-pattern
+
+Provided by @dfleta user which I used to learn and understand the concepts fo the pattern and how the test works. After I put this code in a specific Branch called: feature/activeRecordFruits, you can see it here:
+
+https://github.com/cifpfbmoll/active-record-patter-MateoGarciaG/tree/feature/activeRecordFruits
+
+I did this because I want to create new Entities apart from the origin code provided by @dfleta to practice by my own with my test cases and the Service and Controller methods to learn the process from beginning until the end of how to create and API with active record pattern and the test cases.
+
+My new API is about Students and Universities.
+
 
 **[⬆ back to top](#tabla-de-contenidos)**
 
