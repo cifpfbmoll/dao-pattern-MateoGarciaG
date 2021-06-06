@@ -97,10 +97,11 @@ I also created 2 branches focused on to use MariaDB and MySQL to test how works 
 
 MariaDB:
 
-
+https://github.com/cifpfbmoll/dao-pattern-MateoGarciaG/tree/feature/mariaDB
 
 MySQL:
 
+https://github.com/cifpfbmoll/dao-pattern-MateoGarciaG/tree/feature/mySQL
 
 
 I prefer this pattern because let me to separate more the Layers in the API and because The Entity doesn't have to managed by itself like in the Active Pattern where through PanacheEntity, the Entity use the methods like a EntityManager. So this pattern let me to separate the EntityManager from the Entity itself with a new layer called: RESPOSITORY
