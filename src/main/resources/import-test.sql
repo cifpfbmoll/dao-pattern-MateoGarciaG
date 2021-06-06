@@ -5,8 +5,9 @@ CREATE TABLE Student
     id SERIAL NOT NULL,
     name VARCHAR (255) NOT NULL,
     surname VARCHAR(255),
-    date_birth DATE,
-    phone VARCHAR(100),
+    date_birth DATE NOT NULL,
+    -- VARCHAR(22) because the number must be indicate the country. example: +34 and the limit is 22 characters
+    phone VARCHAR(22),
     PRIMARY KEY (id)
 );
 INSERT INTO Student (id, name, surname, date_birth, phone)
