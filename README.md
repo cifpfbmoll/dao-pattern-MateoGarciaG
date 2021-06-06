@@ -1,4 +1,4 @@
-# Rest-Json-DAO-Pattern Project with MySQL
+# Rest-Json-DAO-Pattern Project with MariaDB
 
 ## Getting Started
 Wellcome to my Project with Rest-Json API with DAO Pattern with the Quarkus FrameWork related to Java. This project is 
