@@ -19,7 +19,7 @@ public class PostgresqlDBContainer {
         @Override
         public Map<String, String> start() {
             // Instantiate PostGrSQLDB container with required Docker image
-            this.postgresDBContainer= new PostgreSQLContainer<>("postgres:latest").withDatabaseName("fruitsdbtest")
+            this.postgresDBContainer= new PostgreSQLContainer<>("postgres:latest").withDatabaseName("studentsdbtest")
             .withUsername("test")
             .withPassword("test")
             .withExposedPorts(5432, 3005);
