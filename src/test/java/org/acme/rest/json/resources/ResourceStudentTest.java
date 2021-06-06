@@ -129,4 +129,24 @@ public class ResourceStudentTest {
             .statusCode(404);
     }
 
+    @Test
+    public void updateStudentTest() {
+
+        // equalTo() para valores unicos
+        // containsInAnyOrder para lista de valores
+
+        given()
+            .body("{\"name\": \"Mateo\", \"surname\": \"Gomez\", \"dateBirth\": \"2000-10-17\", \"phone\": \"+34 688888888\"}")
+            .header("Content-Type", MediaType.APPLICATION_JSON)
+        .when()
+            .put("/students/put")
+        .then()
+            .contentType(ContentType.JSON)
+            .body("name", equalTo("Mateo"),
+            "surname", equalTo("Gomez"),
+            "dateBirth", equalTo("2000-10-17"),
+            "phone", equalTo("+34 688888888"));
+
+    }
+
 }
